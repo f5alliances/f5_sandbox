@@ -1,9 +1,9 @@
 Use cases
 =========
 
-Once the infrastucture is up and running, different use cases and scenrios can be tried and tested on this environment
+Once the infrastucture is up and running, different templated use cases and scenrios can be tried and tested on this environment
 
-`View and execute use cases <https://f5-ansible-use-cases.readthedocs.io/en/latest/index.html>`_ that can be run on the F5 Automation Provisioner to test common scenarios. 
+`View and execute Ansible automation use cases <https://f5-ansible-use-cases.readthedocs.io/en/latest/index.html>`_ that can be run on the F5 Automation Provisioner to test common scenarios. 
 
 **New Use Cases will be added periodically to provide additional senarios**
 
