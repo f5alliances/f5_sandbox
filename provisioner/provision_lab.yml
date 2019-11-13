@@ -4,11 +4,24 @@
   become: no
   gather_facts: yes
   tasks:
-    - name: Make sure we are running correct Ansible Version
+
+    - name: Check installed python Modules
+      python_requirements_facts:
+        dependencies:
+          - boto
+          - netaddr
+          - passlib
+          - boto3>=1.7
+          - paramiko
+          - ansible>=2.8
+      register: py_dep
+
+    - name: Verify python dependencies are Installed
       assert:
         that:
-          - ansible_version.major >= 2
-          - ansible_version.minor >= 8
+          - py_dep.not_found |length==0
+          - py_dep.mismatched |length==0
+        msg: "Python dependencies not installed or at required version"
 
     - name: Make sure workshop_type is set to a correct value
       assert:
