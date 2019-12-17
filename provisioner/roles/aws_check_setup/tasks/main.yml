@@ -1,14 +1,4 @@
 ---
-- name: grab boto version
-  command: "{{ansible_python['executable']}} -c 'import boto3; print(boto3.__version__)'"
-  register: py_cmd
-
-- name: make sure we are running correct boto version
-  assert:
-    that:
-      - py_cmd.stdout is version('1.7', operator='ge')
-    msg: "boto3 >= 1.7 is required."
-
 - name: check for underscores in workshop name
   fail:
     msg: "Amazon AWS does not allow underscores _ for s3 websites, please see https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html"
